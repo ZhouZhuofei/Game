@@ -11,15 +11,22 @@ import UIKit
 class first: UIViewController {
 
     @IBOutlet weak var welcome: first_2!
+    @IBOutlet weak var user: UITextField!
+    var textField: UITextField?
     override func viewDidLoad() {
         super.viewDidLoad()
         let mylabel: UILabel = UILabel()
-        mylabel.frame = CGRect(x: 0, y: 0, width: 124, height: 21)
-        mylabel.layer.position = CGPoint(x: self.view.bounds.width/2, y: 381)
+        mylabel.frame = CGRect(x: 0, y: 0, width: 185, height: 30)
+        mylabel.layer.position = CGPoint(x: self.view.bounds.width/2, y: 200)
         mylabel.textColor = UIColor.white
         mylabel.backgroundColor = UIColor.black
-        mylabel.text = "i'm a test label"
+        mylabel.text = "Tell something to world!"
         self.view.addSubview(mylabel)
+        textField = UITextField(frame: CGRect(x: 0, y: 0, width:185, height: 30 ))
+        textField?.layer.position = CGPoint(x: self.view.bounds.width/2, y: 250)
+        textField?.borderStyle = UITextField.BorderStyle.line
+        textField?.placeholder = "Username"
+        self.view.addSubview(textField!)
         
         
 
