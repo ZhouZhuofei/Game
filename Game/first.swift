@@ -20,11 +20,12 @@ class first: UIViewController {
     }
     
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let mylabel: UILabel = UILabel()
         mylabel.frame = CGRect(x: 0, y: 0, width: 300, height: 100)
-        mylabel.layer.position = CGPoint(x: self.view.bounds.width/2, y: 150)
+        mylabel.layer.position = CGPoint(x: self.view.bounds.width/2, y: 600)
         mylabel.textColor = UIColor.white
         mylabel.backgroundColor = UIColor.black
         mylabel.text = "Tell something to world!"
@@ -42,12 +43,35 @@ class first: UIViewController {
         password?.borderStyle = UITextField.BorderStyle.roundedRect
         password?.placeholder = "password"
         self.view.addSubview(password!)
-        signin.layer.position = CGPoint(x: 250, y: 340)
+        signin.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
+        signin.layer.position = CGPoint(x: self.view.bounds.width/2, y: 350)
         signin.setTitleColor(UIColor.white, for: .normal)
         signin.backgroundColor = UIColor(displayP3Red: 0.0, green: 0.5, blue: 0.5, alpha: 0.5)
         
+        
         signin.layer.cornerRadius = 10
-        signin.layer.borderWidth = 1
+        signin.layer.borderWidth = 0.1
+        let img1 = UIImage(named: "IMG_1093.JPG")
+        let hello = UIImageView(image: img1)
+        hello.layer.masksToBounds = true
+        hello.layer.cornerRadius = 8
+        hello.isHighlighted = true
+        hello.frame = CGRect(x: 0, y: 0, width: 300, height: 170)
+        hello.layer.position = CGPoint(x: self.view.bounds.width/2, y: 460)
+        self.view.addSubview(hello)
+        let img2 = UIImage(named: "IMG_0515.jpeg")
+        let usr = UIImageView(image: img2)
+        usr.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        usr.layer.position = CGPoint(x: self.view.bounds.width/2, y: 150)
+        usr.layer.cornerRadius = 50
+        usr.clipsToBounds = true
+        self.view.addSubview(usr)
+        
+        
+        let bac = UIImage(named:"IMG_0147.jpg")
+
+        self.view.backgroundColor = UIColor(patternImage: bac!)
+        
 
         
         
